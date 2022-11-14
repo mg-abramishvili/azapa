@@ -16,7 +16,7 @@
                         <th class="border-0">Домен</th>
                         <th class="border-0">Примечание</th>
                         <th class="border-0">Подключенные прайсы</th>
-                        <th class="border-0"></th>
+                        <th class="border-0 rounded-end"></th>
                         </tr>
                     </thead>
                     <tbody>
