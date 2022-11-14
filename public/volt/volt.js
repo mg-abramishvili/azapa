@@ -174,7 +174,7 @@ d.addEventListener("DOMContentLoaded", function(event) {
     if(d.querySelector('.ct-chart-sales-value')) {
         //Chart 5
           new Chartist.Line('.ct-chart-sales-value', {
-            labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+            labels: ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'ВС'],
             series: [
                 [0, 10, 30, 40, 80, 60, 100]
             ]
@@ -281,11 +281,6 @@ d.addEventListener("DOMContentLoaded", function(event) {
             }, 1500);
         });
     }
-
-    var scroll = new SmoothScroll('a[href*="#"]', {
-        speed: 500,
-        speedAsDuration: true
-    });
 
     if(d.querySelector('.current-year')){
         d.querySelector('.current-year').textContent = new Date().getFullYear();

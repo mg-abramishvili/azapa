@@ -10,7 +10,9 @@ return new class extends Migration
     {
         Schema::create('shops', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
             $table->string('domain');
+            $table->string('description');
             $table->string('tel');
             $table->string('address');
             $table->longText('about_text')->default('<p>Текст о магазине.</p>');

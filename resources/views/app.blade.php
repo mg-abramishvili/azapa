@@ -17,12 +17,6 @@
     <!-- Vendor JS -->
     <script src="/volt/onscreen/dist/on-screen.umd.min.js"></script>
 
-    <!-- Slider -->
-    <script src="/volt/nouislider/distribute/nouislider.min.js"></script>
-
-    <!-- Smooth scroll -->
-    <script src="/volt/smooth-scroll/dist/smooth-scroll.polyfills.min.js"></script>
-
     <!-- Charts -->
     <script src="/volt/chartist/dist/chartist.min.js"></script>
     <script src="/volt/chartist-plugin-tooltips/dist/chartist-plugin-tooltip.min.js"></script>
