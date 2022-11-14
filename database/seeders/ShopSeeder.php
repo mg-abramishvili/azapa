@@ -13,6 +13,7 @@ class ShopSeeder extends Seeder
     {
         DB::table('shops')->insert([
             'id' => 1,
+            'uid' => Str::random(16),
             'user_id' => 1,
             'domain' => 'toyota-zap.ru',
             'description' => 'Магазин запчастей Toyota',

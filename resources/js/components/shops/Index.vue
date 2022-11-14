@@ -1,7 +1,7 @@
 <template>
     <div class="d-flex justify-content-between align-items-center w-100 flex-wrap py-4">
         <h1 class="h4 m-0">Магазины</h1>
-        <button class="btn btn-secondary" type="button">Добавить магазин</button>
+        <router-link :to="{name: 'ShopMaster' }" class="btn btn-secondary">Добавить магазин</router-link>
     </div>
 
     <div class="card border-0 shadow mb-4">
@@ -35,8 +35,8 @@
                                     {{ shop.prices }}
                                 </template>
                             </td>
-                            <td class="align-middle">
-                                <button class="btn btn-outline-info" type="button">Детали</button>
+                            <td class="align-middle text-end">
+                                <router-link :to="{name: 'ShopMaster', params: {uid: shop.uid} }" class="btn btn-outline-info">Детали</router-link>
                             </td>
                         </tr>
                     </tbody>
