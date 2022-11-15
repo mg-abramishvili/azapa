@@ -136,8 +136,7 @@ export default {
                     domain: this.domain,
                 })
                 .then(response => {
-                    console.log(response.data)
-                    // this.$router.push({name: 'Shops'})
+                    this.$router.push({name: 'Shops'})
                 })
                 .catch(error => {
                     this.$swal({
