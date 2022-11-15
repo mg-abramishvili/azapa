@@ -49,7 +49,7 @@ class ShopController extends Controller
     {
         $hst_hostname = '185.225.34.126';
         $hst_port = '8083';
-        $hst_username = 'azapa';
+        $hst_username = 'admin';
         $hst_password = '63VBtbjw!';
         $hst_returncode = 'yes';
         $hst_command = 'v-add-domain';
