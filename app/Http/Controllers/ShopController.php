@@ -74,6 +74,13 @@ class ShopController extends Controller
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
         curl_setopt($curl, CURLOPT_POST, true);
         curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata);
+        
         $answer = curl_exec($curl);
+
+        if($answer === 0) {
+            return response('Success', 200);
+        } else {
+            return response($answer, 500);
+        }
     }
 }
