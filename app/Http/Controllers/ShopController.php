@@ -64,6 +64,7 @@ class ShopController extends Controller
             'cmd' => $hst_command,
             'arg1' => $username,
             'arg2' => $domain,
+            'arg3' => '',
             'arg4' => 'no',
         );
         
