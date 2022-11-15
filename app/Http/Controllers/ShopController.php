@@ -68,7 +68,7 @@ class ShopController extends Controller
         
         $postdata = http_build_query($postvars);
         $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, 'http://' . $hst_hostname . ':' . $hst_port . '/api/');
+        curl_setopt($curl, CURLOPT_URL, 'https://' . $hst_hostname . ':' . $hst_port . '/api/');
         curl_setopt($curl, CURLOPT_RETURNTRANSFER,true);
         curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
         curl_setopt($curl, CURLOPT_SSL_VERIFYHOST, false);
