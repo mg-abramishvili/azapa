@@ -51,7 +51,7 @@ class ShopController extends Controller
         $hst_port = '8083';
         $hst_username = 'admin';
         $hst_password = '63VBtbjw!';
-        $hst_returncode = 'yes';
+        $hst_returncode = 'no';
         $hst_command = 'v-add-domain';
 
         $username = 'admin';
