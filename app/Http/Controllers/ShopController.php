@@ -64,7 +64,6 @@ class ShopController extends Controller
             'cmd' => $hst_command,
             'arg1' => $username,
             'arg2' => $domain,
-            'arg3' => 'no',
         );
         
         $postdata = http_build_query($postvars);
@@ -77,11 +76,5 @@ class ShopController extends Controller
         curl_setopt($curl, CURLOPT_POSTFIELDS, $postdata);
         
         $answer = curl_exec($curl);
-
-        if($answer === 0) {
-            return response('Success', 200);
-        } else {
-            return response($answer, 500);
-        }
     }
 }
