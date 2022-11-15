@@ -64,6 +64,7 @@ class ShopController extends Controller
             'cmd' => $hst_command,
             'arg1' => $username,
             'arg2' => $domain,
+            'arg4' => 'no',
         );
         
         $postdata = http_build_query($postvars);
