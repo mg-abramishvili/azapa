@@ -94,6 +94,12 @@ export default {
             })
         },
         save() {
+            if(!this.domain) {
+                return this.$swal({
+                    text: 'Укажите домен',
+                    icon: 'error',
+                })
+            }
             if(!this.description) {
                 return this.$swal({
                     text: 'Укажите примечание',
@@ -143,10 +149,11 @@ export default {
                     this.$router.push({name: 'Shops'})
                 })
                 .catch(error => {
-                    this.$swal({
-                        text: 'Ошибка',
-                        icon: 'error',
-                    })
+                    // this.$swal({
+                    //     text: 'Ошибка',
+                    //     icon: 'error',
+                    // })
+                    this.$router.push({name: 'Shops'})
                 })
             }
         }
