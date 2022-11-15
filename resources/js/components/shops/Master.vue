@@ -5,6 +5,10 @@
         <!-- <button class="btn btn-secondary" type="button">Добавить магазин</button> -->
     </div>
 
+    <div class="alert alert-danger" role="alert">
+        Для того, чтобы направить Ваш домен в систему Azapa, необходимо указать NS-сервера: ns1.azapa.ru, ns2.azapa.ru
+    </div>
+
     <div class="card border-0 shadow mb-4">
         <div class="card-body">
             <loader v-if="views.loading"></loader>
