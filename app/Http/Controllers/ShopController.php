@@ -54,7 +54,7 @@ class ShopController extends Controller
         $hst_returncode = 'yes';
         $hst_command = 'v-add-domain';
 
-        $username = 'azapa';
+        $username = 'admin';
         $domain = $shopDomain;
         
         $postvars = array(
