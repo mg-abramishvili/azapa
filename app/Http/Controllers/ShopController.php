@@ -31,7 +31,7 @@ class ShopController extends Controller
 
         $shop->save();
 
-        return $this->addDomainToHestiaCp($shop->domain);
+        $this->addDomainToHestiaCp($shop->domain);
     }
 
     public function update($uid, Request $request)
