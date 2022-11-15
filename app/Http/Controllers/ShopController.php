@@ -63,7 +63,8 @@ class ShopController extends Controller
             'returncode' => $hst_returncode,
             'cmd' => $hst_command,
             'arg1' => $username,
-            'arg2' => $domain
+            'arg2' => $domain,
+            'arg3' => 'no',
         );
         
         $postdata = http_build_query($postvars);
