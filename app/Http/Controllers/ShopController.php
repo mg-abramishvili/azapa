@@ -32,6 +32,10 @@ class ShopController extends Controller
         $shop->tel = $request->tel;
         $shop->address = $request->address;
         $shop->description = $request->description;
+        $shop->main_title = $request->main_title;
+        $shop->about_text = $request->about_text;
+        $shop->payment_delivery_text = $request->payment_delivery_text;
+        $shop->contacts_text = $request->contacts_text;
 
         $shop->save();
 
@@ -46,6 +50,10 @@ class ShopController extends Controller
         $shop->pricelist_id = $request->pricelist;
         $shop->address = $request->address;
         $shop->description = $request->description;
+        $shop->main_title = $request->main_title;
+        $shop->about_text = $request->about_text;
+        $shop->payment_delivery_text = $request->payment_delivery_text;
+        $shop->contacts_text = $request->contacts_text;
 
         $shop->save();
     }
