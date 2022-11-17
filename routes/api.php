@@ -25,6 +25,10 @@ Route::get('orders', [App\Http\Controllers\OrderController::class, 'index']);
 Route::get('order/{uid}', [App\Http\Controllers\OrderController::class, 'order']);
 Route::delete('order/{id}', [App\Http\Controllers\OrderController::class, 'delete']);
 
+// FOR API
+Route::get('mag/{domain}/info', [App\Http\Controllers\ApiClientController::class, 'shopInfo']);
+Route::get('mag/{domain}/products', [App\Http\Controllers\ApiClientController::class, 'shopProducts']);
+
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
