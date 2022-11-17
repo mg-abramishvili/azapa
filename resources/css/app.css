@@ -1,1 +1,6 @@
-@import "volt.css"
+@import "volt.css";
+
+.table td,
+.table th {
+    white-space: normal;
+}
