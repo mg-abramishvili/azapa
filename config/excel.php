@@ -31,7 +31,7 @@ return [
         | When enabling strict null comparison empty cells ('') will
         | be added to the sheet.
         */
-        'strict_null_comparison' => true,
+        'strict_null_comparison' => false,
 
         /*
         |--------------------------------------------------------------------------
@@ -98,7 +98,7 @@ return [
         | ignored by enabling the setting ignore_empty to true.
         |
         */
-        'ignore_empty' => true,
+        'ignore_empty' => false,
 
         /*
         |--------------------------------------------------------------------------
