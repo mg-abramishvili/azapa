@@ -15,6 +15,7 @@ class ShopSeeder extends Seeder
             'id' => 1,
             'uid' => Str::random(16),
             'user_id' => 1,
+            'pricelist_id' => 1,
             'domain' => 'toyota-zap.ru',
             'description' => 'Магазин запчастей Toyota',
             'tel' => '8 800 123-45-67',

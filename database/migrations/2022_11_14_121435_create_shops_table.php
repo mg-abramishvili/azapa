@@ -12,6 +12,7 @@ return new class extends Migration
             $table->id();
             $table->string('uid');
             $table->integer('user_id');
+            $table->integer('pricelist_id');
             $table->string('domain');
             $table->string('description');
             $table->string('tel');
