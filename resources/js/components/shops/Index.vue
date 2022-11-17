@@ -31,8 +31,8 @@
                                 {{ shop.description }}
                             </td>
                             <td class="align-middle">
-                                <template v-if="shop.prices">
-                                    {{ shop.prices }}
+                                <template v-if="shop.pricelist">
+                                    {{ shop.pricelist.name }}
                                 </template>
                             </td>
                             <td class="align-middle text-end">

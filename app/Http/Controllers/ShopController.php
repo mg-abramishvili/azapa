@@ -10,12 +10,15 @@ class ShopController extends Controller
 {
     public function index()
     {
-        return Shop::all();
+        return Shop::with('pricelist')->get();
     }
 
     public function shop($uid)
     {
-        return Shop::where('uid', $uid)->first();
+        return Shop::query()
+            ->where('uid', $uid)
+            ->with('pricelist.products')
+            ->first();
     }
 
     public function store(Request $request)

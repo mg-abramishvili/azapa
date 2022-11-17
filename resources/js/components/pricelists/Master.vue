@@ -21,7 +21,7 @@
         </div>
     </div>
 
-    <div v-if="!views.loading && pricelist.products.length" class="card border-0 shadow mb-4">
+    <div v-if="!views.loading && pricelist.products && pricelist.products.length" class="card border-0 shadow mb-4">
         <div class="card-body">
             <div class="pricelist">
                 <table class="table table-centered table-nowrap mb-0 rounded">
