@@ -28,6 +28,7 @@ class ShopController extends Controller
         $shop->uid = Str::random(16);
         $shop->user_id = 1;
         $shop->domain = $request->domain;
+        $shop->pricelist_id = $request->pricelist;
         $shop->tel = $request->tel;
         $shop->address = $request->address;
         $shop->description = $request->description;
@@ -42,6 +43,7 @@ class ShopController extends Controller
         $shop = Shop::where('uid', $uid)->first();
 
         $shop->tel = $request->tel;
+        $shop->pricelist_id = $request->pricelist;
         $shop->address = $request->address;
         $shop->description = $request->description;
 

@@ -31,6 +31,14 @@
                     </div>
                     <div class="col-12 col-lg-4">
                         <div class="mb-4">
+                            <label>Прайс-лист</label>
+                            <select v-model="selected.pricelist" class="form-selese">
+                                <option v-for="pricelist in pricelists" :value="pricelist.id">{{ pricelist.name }}</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-4">
+                        <div class="mb-4">
                             <label>Примечание</label>
                             <input v-model="description" type="text" class="form-control" placeholder="">
                         </div>
@@ -67,6 +75,10 @@ export default {
             address: '',
             description: '',
 
+            selected: {
+                pricelist: '',
+            },
+
             views: {
                 loading: true,
                 saveButton: true,
@@ -74,6 +86,8 @@ export default {
         }
     },
     created() {
+        this.loadPricelists()
+
         if(this.$route.params.uid) {
             this.loadShop()
         } else {
@@ -81,11 +95,18 @@ export default {
         }
     },
     methods: {
+        loadPricelists() {
+            axios.get(`/api/pricelists`)
+            .then(response => {
+                this.pricelists = response.data
+            })
+        },
         loadShop() {
             axios.get(`/api/shop/${this.$route.params.uid}`)
             .then(response => {
                 this.shop = response.data
 
+                this.selected.pricelist = response.data.pricelist_id
                 this.tel = response.data.tel
                 this.address = response.data.address
                 this.description = response.data.description
@@ -97,6 +118,12 @@ export default {
             if(!this.domain) {
                 return this.$swal({
                     text: 'Укажите домен',
+                    icon: 'error',
+                })
+            }
+            if(!this.pricelist) {
+                return this.$swal({
+                    text: 'Укажите прайс-лист',
                     icon: 'error',
                 })
             }
@@ -124,6 +151,7 @@ export default {
             if(this.$route.params.uid) {
                 axios.put(`/api/shop/${this.$route.params.uid}`, {
                     tel: this.tel,
+                    pricelist: this.selected.pricelist,
                     address: this.address,
                     description: this.description,
                 })
@@ -141,6 +169,7 @@ export default {
             if(!this.$route.params.uid) {
                 axios.post(`/api/shops`, {
                     tel: this.tel,
+                    pricelist: this.selected.pricelist,
                     address: this.address,
                     description: this.description,
                     domain: this.domain,
