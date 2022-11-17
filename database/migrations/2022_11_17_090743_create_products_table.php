@@ -15,8 +15,8 @@ return new class extends Migration
             $table->string('name');
             $table->string('manufacturer');
             $table->string('artnumber');
-            $table->integer('price')->default(0);
-            $table->integer('balance')->default(0);
+            $table->string('price')->nullable();
+            $table->string('balance')->nullable();
             $table->timestamps();
         });
     }
