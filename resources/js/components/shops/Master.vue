@@ -18,14 +18,14 @@
                     <div class="col-12 col-lg-4">
                         <div class="mb-4">
                             <label>Домен</label>
-                            <input v-if="$route.params.uid" v-model="shop.domain" type="text" class="form-control" placeholder="" disabled>
+                            <input v-if="$route.params.uid" v-model="domain" type="text" class="form-control" placeholder="" disabled>
                             <input v-else v-model="domain" type="text" class="form-control" placeholder="">
                         </div>
                     </div>
                     <div class="col-12 col-lg-4">
                         <div class="mb-4">
                             <label>UID</label>
-                            <input v-if="$route.params.uid" v-model="shop.uid" type="text" class="form-control" placeholder="" disabled>
+                            <input v-if="$route.params.uid" v-model="uid" type="text" class="form-control" placeholder="" disabled>
                             <input v-else v-model="uid" type="text" class="form-control" placeholder="Будет сгенерирован автоматически" disabled>
                         </div>
                     </div>
@@ -141,6 +141,8 @@ export default {
                 this.shop = response.data
 
                 this.selected.pricelist = response.data.pricelist_id
+                this.domain = response.data.domain
+                this.uid = response.data.uid
                 this.tel = response.data.tel
                 this.address = response.data.address
                 this.description = response.data.description
