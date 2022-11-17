@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('description');
             $table->string('tel');
             $table->string('address');
+            $table->string('main_title')->default('<p>Запчасти по лучшим ценам</p>');
             $table->longText('about_text')->default('<p>Текст о магазине.</p>');
             $table->longText('payment_delivery_text')->default('<p>Текст об оплате и доставке.</p>');
             $table->longText('contacts_text')->default('<p>Текст с контактами.</p>');

@@ -55,6 +55,26 @@
                             <input v-model="address" type="text" class="form-control" placeholder="">
                         </div>
                     </div>
+
+                    <div class="mb-4">
+                        <label>Главный заголовок</label>
+                        <input v-model="main_title" type="text" class="form-control" placeholder="">
+                    </div>
+
+                    <div class="mb-4">
+                        <label>Текст страницы "О компании"</label>
+                        <ckeditor :editor="editor" v-model="about_text" :config="editorConfig"></ckeditor>
+                    </div>
+
+                    <div class="mb-4">
+                        <label>Текст страницы "Оплата и доставка"</label>
+                        <ckeditor :editor="editor" v-model="payment_delivery_text" :config="editorConfig"></ckeditor>
+                    </div>
+
+                    <div class="mb-4">
+                        <label>Текст страницы "Контакты"</label>
+                        <ckeditor :editor="editor" v-model="contacts_text" :config="editorConfig"></ckeditor>
+                    </div>
                 </div>
 
                 <button @click="save()" :disabled="!views.saveButton" class="btn btn-secondary mt-2">Сохранить</button>
@@ -64,6 +84,9 @@
 </template>
 
 <script>
+import CKEditor from '@ckeditor/ckeditor5-vue'
+import ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+
 export default {
     data() {
         return {
@@ -74,6 +97,10 @@ export default {
             tel: '',
             address: '',
             description: '',
+            main_title: '',
+            about_text: '',
+            payment_delivery_text: '',
+            contacts_text: '',
 
             pricelists: [],
 
@@ -84,7 +111,12 @@ export default {
             views: {
                 loading: true,
                 saveButton: true,
-            }
+            },
+
+            editor: ClassicEditor,
+            editorConfig: {
+                toolbar: [ 'bold', 'italic', '|', 'bulletedList', 'numberedList', '|', 'insertTable', '|', 'undo', 'redo' ],
+            },
         }
     },
     created() {
@@ -112,6 +144,10 @@ export default {
                 this.tel = response.data.tel
                 this.address = response.data.address
                 this.description = response.data.description
+                this.main_title = response.data.main_title
+                this.about_text = response.data.about_text
+                this.payment_delivery_text = response.data.payment_delivery_text
+                this.contacts_text = response.data.contacts_text
 
                 this.views.loading = false
             })
@@ -147,6 +183,30 @@ export default {
                     icon: 'error',
                 })
             }
+            if(!this.main_title) {
+                return this.$swal({
+                    text: 'Укажите заголовок',
+                    icon: 'error',
+                })
+            }
+            if(!this.about_text) {
+                return this.$swal({
+                    text: 'Укажите текст о компании',
+                    icon: 'error',
+                })
+            }
+            if(!this.payment_delivery_text) {
+                return this.$swal({
+                    text: 'Укажите текст о доставке и оплате',
+                    icon: 'error',
+                })
+            }
+            if(!this.contacts_text) {
+                return this.$swal({
+                    text: 'Укажите текст с контактами',
+                    icon: 'error',
+                })
+            }
 
             this.views.saveButton = false
 
@@ -156,6 +216,10 @@ export default {
                     pricelist: this.selected.pricelist,
                     address: this.address,
                     description: this.description,
+                    main_title: this.main_title,
+                    payment_delivery_text: this.payment_delivery_text,
+                    about_text: this.about_text,
+                    contacts_text: this.contacts_text,
                 })
                 .then(response => {
                     this.$router.push({name: 'Shops'})
@@ -175,6 +239,10 @@ export default {
                     address: this.address,
                     description: this.description,
                     domain: this.domain,
+                    main_title: this.main_title,
+                    payment_delivery_text: this.payment_delivery_text,
+                    about_text: this.about_text,
+                    contacts_text: this.contacts_text,
                 })
                 .then(response => {
                     this.$router.push({name: 'Shops'})
@@ -189,5 +257,8 @@ export default {
             }
         }
     },
+    components: {
+        ckeditor: CKEditor.component,
+    }
 }
 </script>
