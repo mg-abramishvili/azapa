@@ -13,7 +13,7 @@
                 <input v-model="name" type="text" class="form-control" placeholder="">
             </div>
             <div class="mb-3">
-                <label class="form-label">Файл прайс-листа (XLSX)</label>
+                <label class="form-label">Файл прайс-листа (XLS)</label>
                 <input @change="uploadFile" ref="file" class="form-control" type="file" id="formFile">
             </div>
 
