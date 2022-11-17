@@ -123,7 +123,7 @@ export default {
                     icon: 'error',
                 })
             }
-            if(!this.pricelist) {
+            if(!this.selected.pricelist) {
                 return this.$swal({
                     text: 'Укажите прайс-лист',
                     icon: 'error',
