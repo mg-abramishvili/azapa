@@ -19,7 +19,7 @@ return [
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*'],
+    'allowed_origins' => ['zapchasti-kia-rio.ru'],
 
     'allowed_origins_patterns' => [],
 
