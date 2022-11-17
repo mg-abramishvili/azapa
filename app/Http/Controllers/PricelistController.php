@@ -33,7 +33,7 @@ class PricelistController extends Controller
 
         $pricelist->save();
 
-        return Excel::import(new ProductImport, $request->file);
+        Excel::import(new ProductImport, $request->file);
 
         return response('Success', 200);
     }
