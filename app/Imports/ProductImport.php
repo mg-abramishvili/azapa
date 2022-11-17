@@ -13,15 +13,18 @@ class ProductImport implements ToModel, WithStartRow
     {
         $request = request()->all();
         
-        return new Product([
-            'manufacturer' => rtrim($row[0]),
-            'artnumber' => rtrim($row[1]),
-            'name' => rtrim($row[2]),
-            'price' => rtrim($row[3]),
-            'balance' => rtrim($row[4]) ?? 0,
-            'category_id' => 1,
-            'pricelist_id' => 1,
-        ]);
+        if($row[4])
+        {
+            return new Product([
+                'manufacturer' => rtrim($row[0]),
+                'artnumber' => rtrim($row[1]),
+                'name' => rtrim($row[2]),
+                'price' => rtrim($row[3]),
+                'balance' => rtrim($row[4]),
+                'category_id' => 1,
+                'pricelist_id' => 1,
+            ]);
+        }
     }
 
     public function startRow(): int
