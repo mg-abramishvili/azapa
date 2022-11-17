@@ -32,7 +32,7 @@
                     <div class="col-12 col-lg-4">
                         <div class="mb-4">
                             <label>Прайс-лист</label>
-                            <select v-model="selected.pricelist" class="form-selese">
+                            <select v-model="selected.pricelist" class="form-select">
                                 <option v-for="pricelist in pricelists" :value="pricelist.id">{{ pricelist.name }}</option>
                             </select>
                         </div>
