@@ -15,11 +15,11 @@ return [
     |
     */
 
-    'paths' => ['api/*', 'sanctum/csrf-cookie'],
+    'paths' => ['api/*', 'sanctum/csrf-cookie', 'api'],
 
     'allowed_methods' => ['*'],
 
-    'allowed_origins' => ['*.zapchasti-kia-rio.ru'],
+    'allowed_origins' => ['*'],
 
     'allowed_origins_patterns' => [],
 
